@@ -1,1 +1,647 @@
-# Moschee
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>مسجد السلام | Siegen</title>
+    <meta name="description" content="الموقع الرسمي لمسجد السلام في Siegen - Görlitzer Platz 2, 57072 Siegen">
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+    <header class="header">
+        <div class="container nav-container">
+
+            <a href="#home" class="logo">
+                <div class="logo-icon">☪</div>
+                <div>
+                    <span class="logo-ar">مسجد السلام</span>
+                    <span class="logo-de">Masjid Al-Salam</span>
+                </div>
+            </a>
+
+            <nav class="nav" id="mainNav">
+                <a href="#home" data-ar="الرئيسية" data-de="Startseite">الرئيسية</a>
+                <a href="#prayer" data-ar="أوقات الصلاة" data-de="Gebetszeiten">أوقات الصلاة</a>
+                <a href="#jummah" data-ar="الجمعة" data-de="Freitagsgebet">الجمعة</a>
+                <a href="#about" data-ar="عن المسجد" data-de="Über uns">عن المسجد</a>
+                <a href="#announcements" data-ar="الإعلانات" data-de="Ankündigungen">الإعلانات</a>
+                <a href="#contact" data-ar="تواصل معنا" data-de="Kontakt">تواصل معنا</a>
+            </nav>
+
+            <div class="header-actions">
+                <button id="languageBtn" class="icon-btn" title="Deutsch / العربية">
+                    DE
+                </button>
+
+                <button id="themeBtn" class="icon-btn" title="الوضع الليلي">
+                    🌙
+                </button>
+
+                <button id="menuBtn" class="menu-btn" aria-label="القائمة">
+                    ☰
+                </button>
+            </div>
+
+        </div>
+    </header>
+
+
+    <!-- ================= HERO ================= -->
+    <main>
+
+        <section id="home" class="hero">
+            <div class="hero-overlay"></div>
+
+            <div class="container hero-content">
+
+                <div class="hero-text">
+                    <span class="welcome" data-ar="مرحباً بكم في" data-de="Willkommen bei">
+                        مرحباً بكم في
+                    </span>
+
+                    <h1>
+                        <span data-ar="مسجد السلام" data-de="Masjid Al-Salam">
+                            مسجد السلام
+                        </span>
+                    </h1>
+
+                    <p
+                        data-ar="بيت من بيوت الله، يجمعنا على الصلاة والإيمان والأخوة."
+                        data-de="Ein Haus Allahs, das uns in Gebet, Glauben und Gemeinschaft verbindet."
+                    >
+                        بيت من بيوت الله، يجمعنا على الصلاة والإيمان والأخوة.
+                    </p>
+
+                    <div class="hero-buttons">
+                        <a href="#prayer" class="btn btn-primary">
+                            <span data-ar="أوقات الصلاة" data-de="Gebetszeiten">أوقات الصلاة</span>
+                        </a>
+
+                        <a href="#contact" class="btn btn-outline">
+                            <span data-ar="موقع المسجد" data-de="Standort">موقع المسجد</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="hero-card">
+                    <div class="hero-card-icon">🕌</div>
+
+                    <span data-ar="مسجد السلام - سيغن" data-de="Masjid Al-Salam - Siegen">
+                        مسجد السلام - سيغن
+                    </span>
+
+                    <strong>57072 Siegen</strong>
+
+                    <small>Görlitzer Platz 2</small>
+
+                    <a
+                        href="https://www.google.com/maps/search/?api=1&query=Görlitzer+Platz+2,+57072+Siegen"
+                        target="_blank"
+                        rel="noopener"
+                    >
+                        📍
+                        <span data-ar="فتح الخريطة" data-de="Karte öffnen">
+                            فتح الخريطة
+                        </span>
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ================= NEXT PRAYER ================= -->
+        <section class="next-prayer-section">
+            <div class="container">
+
+                <div class="next-prayer-card">
+
+                    <div class="next-prayer-info">
+                        <span class="small-label"
+                              data-ar="الصلاة القادمة"
+                              data-de="Nächstes Gebet">
+                            الصلاة القادمة
+                        </span>
+
+                        <h2 id="nextPrayerName">الفجر</h2>
+
+                        <div class="next-prayer-time" id="nextPrayerTime">
+                            05:30
+                        </div>
+                    </div>
+
+                    <div class="countdown">
+                        <span
+                            data-ar="الوقت المتبقي"
+                            data-de="Verbleibende Zeit">
+                            الوقت المتبقي
+                        </span>
+
+                        <strong id="countdown">00:00:00</strong>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ================= PRAYER TIMES ================= -->
+        <section id="prayer" class="section prayer-section">
+
+            <div class="container">
+
+                <div class="section-heading">
+                    <span class="section-kicker">🕌</span>
+
+                    <h2 data-ar="أوقات الصلاة" data-de="Gebetszeiten">
+                        أوقات الصلاة
+                    </h2>
+
+                    <p
+                        data-ar="مواقيت الصلاة اليومية في مدينة Siegen"
+                        data-de="Tägliche Gebetszeiten in Siegen"
+                    >
+                        مواقيت الصلاة اليومية في مدينة Siegen
+                    </p>
+                </div>
+
+                <div class="date-display">
+                    <span id="currentDate"></span>
+                </div>
+
+                <div class="prayer-grid">
+
+                    <div class="prayer-card">
+                        <div class="prayer-icon">🌅</div>
+                        <h3 data-ar="الفجر" data-de="Fajr">الفجر</h3>
+                        <strong>05:30</strong>
+                        <span data-ar="صلاة الفجر" data-de="Morgengebet">صلاة الفجر</span>
+                    </div>
+
+                    <div class="prayer-card">
+                        <div class="prayer-icon">☀️</div>
+                        <h3 data-ar="الظهر" data-de="Dhuhr">الظهر</h3>
+                        <strong>13:20</strong>
+                        <span data-ar="صلاة الظهر" data-de="Mittagsgebet">صلاة الظهر</span>
+                    </div>
+
+                    <div class="prayer-card">
+                        <div class="prayer-icon">🌤️</div>
+                        <h3 data-ar="العصر" data-de="Asr">العصر</h3>
+                        <strong>16:45</strong>
+                        <span data-ar="صلاة العصر" data-de="Nachmittagsgebet">صلاة العصر</span>
+                    </div>
+
+                    <div class="prayer-card active">
+                        <div class="prayer-icon">🌇</div>
+                        <h3 data-ar="المغرب" data-de="Maghrib">المغرب</h3>
+                        <strong>19:35</strong>
+                        <span data-ar="صلاة المغرب" data-de="Abendgebet">صلاة المغرب</span>
+                    </div>
+
+                    <div class="prayer-card">
+                        <div class="prayer-icon">🌙</div>
+                        <h3 data-ar="العشاء" data-de="Isha">العشاء</h3>
+                        <strong>21:10</strong>
+                        <span data-ar="صلاة العشاء" data-de="Nachtgebet">صلاة العشاء</span>
+                    </div>
+
+                </div>
+
+                <p class="prayer-note"
+                   data-ar="* الأوقات الموضحة تجريبية ويمكن تعديلها حسب مواقيت المسجد."
+                   data-de="* Die angezeigten Zeiten sind Beispielzeiten und können entsprechend den Gebetszeiten der Moschee angepasst werden.">
+                    * الأوقات الموضحة تجريبية ويمكن تعديلها حسب مواقيت المسجد.
+                </p>
+
+            </div>
+        </section>
+
+
+        <!-- ================= JUMMAH ================= -->
+        <section id="jummah" class="section jummah-section">
+
+            <div class="container">
+
+                <div class="jummah-content">
+
+                    <div class="jummah-icon">🕌</div>
+
+                    <div>
+                        <span class="section-kicker"
+                              data-ar="صلاة الجمعة"
+                              data-de="Freitagsgebet">
+                            صلاة الجمعة
+                        </span>
+
+                        <h2 data-ar="موعد صلاة الجمعة" data-de="Freitagsgebet">
+                            موعد صلاة الجمعة
+                        </h2>
+
+                        <p
+                            data-ar="ندعوكم للحضور مبكراً والاستماع إلى خطبة الجمعة."
+                            data-de="Wir laden Sie herzlich ein, frühzeitig zu kommen und die Freitagspredigt zu besuchen."
+                        >
+                            ندعوكم للحضور مبكراً والاستماع إلى خطبة الجمعة.
+                        </p>
+                    </div>
+
+                    <div class="jummah-time">
+                        <span data-ar="الخطبة" data-de="Predigt">الخطبة</span>
+                        <strong>13:30</strong>
+                    </div>
+
+                    <div class="jummah-time">
+                        <span data-ar="الصلاة" data-de="Gebet">الصلاة</span>
+                        <strong>14:00</strong>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ================= ABOUT ================= -->
+        <section id="about" class="section about-section">
+
+            <div class="container about-grid">
+
+                <div class="about-image">
+                    <div class="mosque-placeholder">
+                        <span>🕌</span>
+                        <p data-ar="مسجد السلام" data-de="Masjid Al-Salam">
+                            مسجد السلام
+                        </p>
+                    </div>
+                </div>
+
+                <div class="about-text">
+
+                    <span class="section-kicker"
+                          data-ar="عن المسجد"
+                          data-de="Über uns">
+                        عن المسجد
+                    </span>
+
+                    <h2
+                        data-ar="مسجد السلام في مدينة Siegen"
+                        data-de="Masjid Al-Salam in Siegen"
+                    >
+                        مسجد السلام في مدينة Siegen
+                    </h2>
+
+                    <p
+                        data-ar="مسجد السلام هو مكان للعبادة والتواصل الاجتماعي وخدمة المجتمع المسلم في مدينة Siegen."
+                        data-de="Masjid Al-Salam ist ein Ort des Gebets, der Gemeinschaft und des sozialen Zusammenhalts für die muslimische Gemeinschaft in Siegen."
+                    >
+                        مسجد السلام هو مكان للعبادة والتواصل الاجتماعي وخدمة المجتمع المسلم في مدينة Siegen.
+                    </p>
+
+                    <p
+                        data-ar="نرحب بجميع المصلين والزوار، ونسعى إلى توفير بيئة إيمانية هادئة تجمع أفراد المجتمع."
+                        data-de="Wir heißen alle Besucher herzlich willkommen und möchten eine ruhige und freundliche Atmosphäre für die Gemeinschaft schaffen."
+                    >
+                        نرحب بجميع المصلين والزوار، ونسعى إلى توفير بيئة إيمانية هادئة تجمع أفراد المجتمع.
+                    </p>
+
+                    <div class="features">
+
+                        <div class="feature">
+                            <span>✓</span>
+                            <p data-ar="مكان للعبادة" data-de="Ort des Gebets">
+                                مكان للعبادة
+                            </p>
+                        </div>
+
+                        <div class="feature">
+                            <span>✓</span>
+                            <p data-ar="خدمة المجتمع" data-de="Gemeinschaft">
+                                خدمة المجتمع
+                            </p>
+                        </div>
+
+                        <div class="feature">
+                            <span>✓</span>
+                            <p data-ar="تعليم القرآن" data-de="Koranunterricht">
+                                تعليم القرآن
+                            </p>
+                        </div>
+
+                        <div class="feature">
+                            <span>✓</span>
+                            <p data-ar="برامج إسلامية" data-de="Islamische Programme">
+                                برامج إسلامية
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ================= ANNOUNCEMENTS ================= -->
+        <section id="announcements" class="section announcements-section">
+
+            <div class="container">
+
+                <div class="section-heading">
+                    <span class="section-kicker">📢</span>
+
+                    <h2 data-ar="آخر الإعلانات" data-de="Aktuelle Ankündigungen">
+                        آخر الإعلانات
+                    </h2>
+
+                    <p
+                        data-ar="تابعوا آخر أخبار وبرامج المسجد"
+                        data-de="Aktuelle Nachrichten und Veranstaltungen der Moschee"
+                    >
+                        تابعوا آخر أخبار وبرامج المسجد
+                    </p>
+                </div>
+
+                <div class="announcement-grid">
+
+                    <article class="announcement-card">
+                        <div class="announcement-date">
+                            <strong>FRI</strong>
+                            <span>JUMMAH</span>
+                        </div>
+
+                        <div>
+                            <h3
+                                data-ar="صلاة الجمعة"
+                                data-de="Freitagsgebet"
+                            >
+                                صلاة الجمعة
+                            </h3>
+
+                            <p
+                                data-ar="تذكير بموعد خطبة وصلاة الجمعة."
+                                data-de="Erinnerung an die Freitagspredigt und das Gebet."
+                            >
+                                تذكير بموعد خطبة وصلاة الجمعة.
+                            </p>
+                        </div>
+                    </article>
+
+
+                    <article class="announcement-card">
+                        <div class="announcement-date green">
+                            <strong>QUR</strong>
+                            <span>QURAN</span>
+                        </div>
+
+                        <div>
+                            <h3
+                                data-ar="حلقة تحفيظ القرآن"
+                                data-de="Koranunterricht"
+                            >
+                                حلقة تحفيظ القرآن
+                            </h3>
+
+                            <p
+                                data-ar="برنامج تعليم القرآن للأطفال والشباب."
+                                data-de="Koranunterricht für Kinder und Jugendliche."
+                            >
+                                برنامج تعليم القرآن للأطفال والشباب.
+                            </p>
+                        </div>
+                    </article>
+
+
+                    <article class="announcement-card">
+                        <div class="announcement-date gold">
+                            <strong>NEW</strong>
+                            <span>EVENT</span>
+                        </div>
+
+                        <div>
+                            <h3
+                                data-ar="فعاليات المسجد"
+                                data-de="Veranstaltungen"
+                            >
+                                فعاليات المسجد
+                            </h3>
+
+                            <p
+                                data-ar="تابعوا الإعلانات لمعرفة المواعيد والفعاليات القادمة."
+                                data-de="Weitere Termine und Veranstaltungen werden hier bekannt gegeben."
+                            >
+                                تابعوا الإعلانات لمعرفة المواعيد والفعاليات القادمة.
+                            </p>
+                        </div>
+                    </article>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ================= DONATION ================= -->
+        <section class="donation-section">
+
+            <div class="container donation-content">
+
+                <div>
+                    <span>❤️</span>
+
+                    <h2
+                        data-ar="ساهم في دعم مسجد السلام"
+                        data-de="Unterstützen Sie Masjid Al-Salam"
+                    >
+                        ساهم في دعم مسجد السلام
+                    </h2>
+
+                    <p
+                        data-ar="تبرعك يساعد في استمرار أنشطة المسجد وخدمة المجتمع."
+                        data-de="Ihre Spende unterstützt die Arbeit der Moschee und die Gemeinschaft."
+                    >
+                        تبرعك يساعد في استمرار أنشطة المسجد وخدمة المجتمع.
+                    </p>
+                </div>
+
+                <a href="#contact" class="btn btn-light">
+                    <span data-ar="معلومات التبرع" data-de="Spendeninformationen">
+                        معلومات التبرع
+                    </span>
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= CONTACT ================= -->
+        <section id="contact" class="section contact-section">
+
+            <div class="container">
+
+                <div class="section-heading">
+                    <span class="section-kicker">📍</span>
+
+                    <h2 data-ar="تواصل معنا" data-de="Kontakt">
+                        تواصل معنا
+                    </h2>
+
+                    <p
+                        data-ar="نسعد بزيارتكم والتواصل معكم"
+                        data-de="Wir freuen uns auf Ihren Besuch und Ihre Nachricht."
+                    >
+                        نسعد بزيارتكم والتواصل معكم
+                    </p>
+                </div>
+
+
+                <div class="contact-grid">
+
+                    <div class="contact-info">
+
+                        <div class="contact-item">
+                            <div class="contact-icon">📍</div>
+
+                            <div>
+                                <h3 data-ar="العنوان" data-de="Adresse">العنوان</h3>
+
+                                <p>
+                                    Görlitzer Platz 2<br>
+                                    57072 Siegen<br>
+                                    Deutschland
+                                </p>
+                            </div>
+                        </div>
+
+
+                        <div class="contact-item">
+                            <div class="contact-icon">📞</div>
+
+                            <div>
+                                <h3 data-ar="الهاتف" data-de="Telefon">الهاتف</h3>
+
+                                <p>
+                                    <a href="tel:+490000000000">
+                                        +49 XXX XXXXXXX
+                                    </a>
+                                </p>
+                            </div>
+                        </div>
+
+
+                        <div class="contact-item">
+                            <div class="contact-icon">✉️</div>
+
+                            <div>
+                                <h3 data-ar="البريد الإلكتروني" data-de="E-Mail">
+                                    البريد الإلكتروني
+                                </h3>
+
+                                <p>
+                                    <a href="mailto:info@masjid-al-salam.de">
+                                        info@masjid-al-salam.de
+                                    </a>
+                                </p>
+                            </div>
+                        </div>
+
+
+                        <a
+                            class="map-btn"
+                            href="https://www.google.com/maps/search/?api=1&query=Görlitzer+Platz+2,+57072+Siegen"
+                            target="_blank"
+                            rel="noopener"
+                        >
+                            📍
+                            <span
+                                data-ar="افتح الموقع في خرائط Google"
+                                data-de="In Google Maps öffnen"
+                            >
+                                افتح الموقع في خرائط Google
+                            </span>
+                        </a>
+
+                    </div>
+
+
+                    <div class="map-container">
+
+                        <iframe
+                            src="https://www.google.com/maps?q=Görlitzer%20Platz%202,%2057072%20Siegen&output=embed"
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="Masjid Al-Salam location">
+                        </iframe>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer">
+
+        <div class="container footer-content">
+
+            <div class="footer-brand">
+                <div class="footer-logo">☪</div>
+
+                <div>
+                    <h3>مسجد السلام</h3>
+                    <p>Masjid Al-Salam • Siegen</p>
+                </div>
+            </div>
+
+
+            <div class="footer-links">
+                <a href="#home">الرئيسية</a>
+                <a href="#prayer">الصلاة</a>
+                <a href="#about">عن المسجد</a>
+                <a href="#contact">تواصل معنا</a>
+            </div>
+
+
+            <div class="footer-social">
+                <a href="#" aria-label="Facebook">f</a>
+                <a href="#" aria-label="Instagram">◎</a>
+                <a href="#" aria-label="WhatsApp">◉</a>
+            </div>
+
+        </div>
+
+        <div class="copyright">
+            © <span id="year"></span> مسجد السلام – Siegen
+        </div>
+
+    </footer>
+
+
+    <!-- ================= BACK TO TOP ================= -->
+    <button id="backToTop" class="back-to-top">
+        ↑
+    </button>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
+
